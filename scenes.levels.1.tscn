@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://4ge7r5yn5l75"]
+
+[ext_resource type="PackedScene" uid="uid://b3of8welu20fe" path="res://hero.tscn" id="1_dopym"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D2" parent="." instance=ExtResource("1_dopym")]
+
+[node name="Area2D" parent="." instance=ExtResource("1_dopym")]
