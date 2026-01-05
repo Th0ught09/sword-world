@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://blgjwe1ks27x5"]
+[gd_scene load_steps=2 format=3 uid="uid://blgjwe1ks27x5"]
 
-[ext_resource type="PackedScene" uid="uid://b3of8welu20fe" path="res://hero.tscn" id="1_2c62f"]
-[ext_resource type="PackedScene" uid="uid://buthm6plxaesg" path="res://enemy_rigid.tscn" id="3_gyfs4"]
+[ext_resource type="Script" uid="uid://ccsnpp3h3e40f" path="res://scripts.level_manager.gd" id="1_0f027"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="hero" parent="." instance=ExtResource("1_2c62f")]
-position = Vector2(150, 210)
-
-[node name="RigidBody2D" parent="." instance=ExtResource("3_gyfs4")]
-position = Vector2(279, 222)
+[node name="levelManager" type="Node" parent="."]
+script = ExtResource("1_0f027")
