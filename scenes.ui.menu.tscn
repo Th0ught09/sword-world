@@ -44,6 +44,8 @@ stretch_mode = 2
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+text = "New Game
+"
 script = ExtResource("4_v8ae7")
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
