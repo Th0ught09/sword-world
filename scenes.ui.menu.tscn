@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c21v6eubiymmk"]
+[gd_scene load_steps=7 format=3 uid="uid://c21v6eubiymmk"]
 
 [ext_resource type="Texture2D" uid="uid://bv5p3s3ux0o1q" path="res://title.png" id="1_h5iyh"]
 [ext_resource type="Texture2D" uid="uid://dvcvvv6h0m8y1" path="res://characters.png" id="1_sgx0e"]
 [ext_resource type="Texture2D" uid="uid://bhr6ytobeby0s" path="res://label_options.png" id="2_v8ae7"]
 [ext_resource type="Texture2D" uid="uid://1k003a2jlqvx" path="res://label_continue.png" id="4_uo44o"]
 [ext_resource type="Script" uid="uid://k7sw6xdqqstd" path="res://scripts.button.gd" id="4_v8ae7"]
+
+[sub_resource type="Theme" id="Theme_v8ae7"]
+default_font_size = 37
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15
@@ -44,6 +47,8 @@ stretch_mode = 2
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_v8ae7")
 text = "New Game
 "
 script = ExtResource("4_v8ae7")

@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3of8welu20fe"]
 
-[ext_resource type="Texture2D" uid="uid://1fw628oq4b8o" path="res://hero.png" id="1_780bu"]
-[ext_resource type="Script" uid="uid://bod2orw7q0j3k" path="res://hero.gd" id="1_p1r5x"]
+[ext_resource type="Texture2D" uid="uid://dd4enhvhupja4" path="res://img.hero.png" id="1_ftyfe"]
+[ext_resource type="Script" uid="uid://njlrw14gqw42" path="res://scripts.hero.gd" id="2_t2smv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1r5x"]
 size = Vector2(53, 67)
 
 [node name="Area2D" type="Area2D"]
-script = ExtResource("1_p1r5x")
+script = ExtResource("2_t2smv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5.5, -5.5)
 shape = SubResource("RectangleShape2D_p1r5x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_780bu")
+texture = ExtResource("1_ftyfe")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
