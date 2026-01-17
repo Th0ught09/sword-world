@@ -1,22 +1,22 @@
 [gd_scene load_steps=7 format=3 uid="uid://c21v6eubiymmk"]
 
 [ext_resource type="Texture2D" uid="uid://bv5p3s3ux0o1q" path="res://title.png" id="1_h5iyh"]
-[ext_resource type="Texture2D" uid="uid://dvcvvv6h0m8y1" path="res://characters.png" id="1_sgx0e"]
 [ext_resource type="Texture2D" uid="uid://bhr6ytobeby0s" path="res://label_options.png" id="2_v8ae7"]
 [ext_resource type="Texture2D" uid="uid://1k003a2jlqvx" path="res://label_continue.png" id="4_uo44o"]
 [ext_resource type="Script" uid="uid://k7sw6xdqqstd" path="res://scripts.button.gd" id="4_v8ae7"]
+[ext_resource type="Texture2D" uid="uid://gkbqkajir5uw" path="res://img.logo.png" id="5_v8ae7"]
 
 [sub_resource type="Theme" id="Theme_v8ae7"]
 default_font_size = 37
 
 [node name="MarginContainer" type="MarginContainer"]
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.006
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -58.0
-offset_top = 26.0
-offset_right = 28.0
-offset_bottom = -43.0
+offset_left = 1.0
+offset_top = 0.11199999
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 80
@@ -55,10 +55,13 @@ script = ExtResource("4_v8ae7")
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.3
 
 [node name="blocks" type="TextureRect" parent="HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
-texture = ExtResource("1_sgx0e")
-stretch_mode = 2
+size_flags_stretch_ratio = 7.95
+texture = ExtResource("5_v8ae7")
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="HBoxContainer/VBoxContainer/Button" method="_on_pressed"]
