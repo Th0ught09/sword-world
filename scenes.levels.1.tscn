@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://4ge7r5yn5l75"]
+[gd_scene load_steps=3 format=3 uid="uid://xy63d7e5hr72"]
 
-[ext_resource type="PackedScene" uid="uid://b3of8welu20fe" path="res://hero.tscn" id="1_dopym"]
+[ext_resource type="PackedScene" uid="uid://b3of8welu20fe" path="res://scenes.characters.hero.tscn" id="1_dopym"]
+[ext_resource type="PackedScene" uid="uid://buthm6plxaesg" path="res://scenes.characters.enemy.tscn" id="2_yp4p6"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Area2D2" parent="." instance=ExtResource("1_dopym")]
 
 [node name="Area2D" parent="." instance=ExtResource("1_dopym")]
+
+[node name="RigidBody2D" parent="." instance=ExtResource("2_yp4p6")]
+position = Vector2(81, -16)
