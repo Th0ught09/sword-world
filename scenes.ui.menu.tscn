@@ -33,20 +33,20 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="cont_btn" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_h5iyh")
 text = "Continue
 "
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="start_btn" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_v8ae7")
 text = "New Game
 "
 script = ExtResource("4_v8ae7")
 
-[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="opt_btn" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_jj7qc")
 text = "Options
@@ -63,4 +63,4 @@ layout_mode = 2
 size_flags_stretch_ratio = 7.95
 texture = ExtResource("5_v8ae7")
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="HBoxContainer/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/start_btn" to="HBoxContainer/VBoxContainer/start_btn" method="_on_pressed"]

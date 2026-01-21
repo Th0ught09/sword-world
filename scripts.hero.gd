@@ -14,6 +14,12 @@ func _process(delta):
 		velocity.y += 100
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 100
+	if velocity.length() > 0:
+		$AnimatedSprite2D.play("walk")
+	elif Input.is_action_pressed("click"):
+		$AnimatedSprite2D.play("attack")
+	else:
+		$AnimatedSprite2D.stop()
 	position += velocity * delta
 
 
