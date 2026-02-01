@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://xy63d7e5hr72"]
+[gd_scene load_steps=4 format=3 uid="uid://xy63d7e5hr72"]
 
 [ext_resource type="PackedScene" uid="uid://b3of8welu20fe" path="res://scenes.characters.hero.tscn" id="1_dopym"]
 [ext_resource type="PackedScene" uid="uid://buthm6plxaesg" path="res://scenes.characters.enemy.tscn" id="2_yp4p6"]
+[ext_resource type="PackedScene" uid="uid://c2ogt0a418flv" path="res://scenes.env.plank_practice.tscn" id="3_d4af2"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Area2D2" parent="." instance=ExtResource("1_dopym")]
-
 [node name="Area2D" parent="." instance=ExtResource("1_dopym")]
+position = Vector2(155, 101)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("2_yp4p6")]
-position = Vector2(81, -16)
+position = Vector2(288, 103)
+gravity_scale = 1.0
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_d4af2")]
+position = Vector2(288, 147)
