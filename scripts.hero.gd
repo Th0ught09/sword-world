@@ -8,13 +8,17 @@ func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 100
+		$AnimatedSprite2D.flip_h = false
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 100
+		$AnimatedSprite2D.flip_h = true
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 100
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 100
-	if velocity.length() > 0:
+	if velocity.length() > 0 and Input.is_action_pressed("click"):
+		$AnimatedSprite2D.play("attack_walk")
+	elif velocity.length() > 0:
 		$AnimatedSprite2D.play("walk")
 	elif Input.is_action_pressed("click"):
 		$AnimatedSprite2D.play("attack")
