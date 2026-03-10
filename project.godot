@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sword-world"
-run/main_scene="uid://hra4nwfu3b1v"
+run/main_scene="uid://xy63d7e5hr72"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -23,6 +23,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_1r2oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ftyfe")
+}],
+"loop": true,
+"name": &"attack_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_ftyfe")
 }, {
 "duration": 1.0,
@@ -43,8 +54,10 @@ shape = SubResource("RectangleShape2D_p1r5x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4.999997, -5.4999957)
-scale = Vector2(0.53999996, 0.66999996)
+scale = Vector2(0.54, 0.67)
 sprite_frames = SubResource("SpriteFrames_ftyfe")
-animation = &"attack"
+animation = &"attack_walk"
+frame = 1
+frame_progress = 0.26326463
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
