@@ -9,7 +9,7 @@
 [node name="Area2D" parent="." instance=ExtResource("1_dopym")]
 position = Vector2(155, 101)
 
-[node name="RigidBody2D" parent="." instance=ExtResource("2_yp4p6")]
+[node name="RigidBody2D" parent="." groups=["enemy"] instance=ExtResource("2_yp4p6")]
 position = Vector2(288, 103)
 gravity_scale = 1.0
 

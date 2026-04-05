@@ -28,6 +28,7 @@ func _process(delta):
 
 
 func _on_body_entered(body:Node2D) -> void:
-	body.queue_free()
+	if body.is_in_group("enemy"):
+		body.queue_free()
 	hit.emit()
 	pass # Replace with function body.
