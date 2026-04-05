@@ -5,9 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://1w1dcra30eku" path="res://img.hero_attack.png" id="3_1r2oj"]
 [ext_resource type="Texture2D" uid="uid://kieydrlb0yst" path="res://img.hero_still.png" id="3_t2smv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1r5x"]
-size = Vector2(26, 39)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_ftyfe"]
 animations = [{
 "frames": [{
@@ -44,13 +41,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1r5x"]
+size = Vector2(26, 39)
+
 [node name="Area2D" type="Area2D"]
 script = ExtResource("2_t2smv")
 metadata/_edit_vertical_guides_ = [-47.0]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, -8.5)
-shape = SubResource("RectangleShape2D_p1r5x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4.999997, -5.4999957)
@@ -59,5 +55,9 @@ sprite_frames = SubResource("SpriteFrames_ftyfe")
 animation = &"attack_walk"
 frame = 1
 frame_progress = 0.26326463
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -8.5)
+shape = SubResource("RectangleShape2D_p1r5x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
