@@ -1,21 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://xy63d7e5hr72"]
 
-[ext_resource type="PackedScene" uid="uid://b3of8welu20fe" path="res://scenes.characters.hero.tscn" id="1_dopym"]
 [ext_resource type="PackedScene" uid="uid://buthm6plxaesg" path="res://scenes.characters.enemy.tscn" id="2_yp4p6"]
 [ext_resource type="PackedScene" uid="uid://c2ogt0a418flv" path="res://scenes.env.plank_practice.tscn" id="3_d4af2"]
+[ext_resource type="Script" uid="uid://njlrw14gqw42" path="res://scripts.hero.gd" id="4_qcu4w"]
 [ext_resource type="PackedScene" uid="uid://dv1fgy544btxt" path="res://scenes.characters.hero_rigid.tscn" id="4_s2fpl"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Area2D" parent="." instance=ExtResource("1_dopym")]
-position = Vector2(155, 101)
-
 [node name="RigidBody2D" parent="." groups=["enemy"] instance=ExtResource("2_yp4p6")]
-position = Vector2(230, 97)
+position = Vector2(224, 106)
 gravity_scale = 1.0
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_d4af2")]
 position = Vector2(237, 157)
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("4_s2fpl")]
-position = Vector2(187, 112)
+position = Vector2(158, 61)
+script = ExtResource("4_qcu4w")
