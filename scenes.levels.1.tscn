@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://xy63d7e5hr72"]
+[gd_scene load_steps=5 format=3 uid="uid://xy63d7e5hr72"]
 
 [ext_resource type="Script" uid="uid://dnqg75yyoebj0" path="res://scenes.characters.enemy.gd" id="2_s2fpl"]
 [ext_resource type="PackedScene" uid="uid://buthm6plxaesg" path="res://scenes.characters.enemy.tscn" id="2_yp4p6"]
 [ext_resource type="PackedScene" uid="uid://c2ogt0a418flv" path="res://scenes.env.plank_practice.tscn" id="3_d4af2"]
-[ext_resource type="Script" uid="uid://dsbio1mmm8i02" path="res://scripts.hero_char.gd" id="5_pjjsa"]
 [ext_resource type="PackedScene" uid="uid://4rtcbmeku0oy" path="res://scenes.characters.hero_char.tscn" id="5_qcu4w"]
 
 [node name="Node2D" type="Node2D"]
@@ -19,4 +18,4 @@ position = Vector2(237, 157)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_qcu4w")]
 position = Vector2(169.78845, 82.3813)
-script = ExtResource("5_pjjsa")
+speed = 50
