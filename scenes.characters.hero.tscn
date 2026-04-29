@@ -1,18 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3of8welu20fe"]
+[gd_scene load_steps=7 format=3 uid="uid://4rtcbmeku0oy"]
 
-[ext_resource type="Texture2D" uid="uid://dd4enhvhupja4" path="res://img.hero.png" id="1_ftyfe"]
-[ext_resource type="Script" uid="uid://njlrw14gqw42" path="res://scripts.hero.gd" id="2_t2smv"]
-[ext_resource type="Texture2D" uid="uid://1w1dcra30eku" path="res://img.hero_attack.png" id="3_1r2oj"]
-[ext_resource type="Texture2D" uid="uid://kieydrlb0yst" path="res://img.hero_still.png" id="3_t2smv"]
+[ext_resource type="Script" uid="uid://dsbio1mmm8i02" path="res://scripts.hero_char.gd" id="1_uhsqv"]
+[ext_resource type="Texture2D" uid="uid://kieydrlb0yst" path="res://img.hero_still.png" id="2_wqmim"]
+[ext_resource type="Texture2D" uid="uid://1w1dcra30eku" path="res://img.hero_attack.png" id="3_pbrcj"]
+[ext_resource type="Texture2D" uid="uid://dd4enhvhupja4" path="res://img.hero.png" id="4_a5ip3"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ftyfe"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbrcj"]
+size = Vector2(37, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_66ips"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_t2smv")
+"texture": ExtResource("2_wqmim")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_1r2oj")
+"texture": ExtResource("3_pbrcj")
 }],
 "loop": true,
 "name": &"attack",
@@ -20,10 +23,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_1r2oj")
+"texture": ExtResource("3_pbrcj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_ftyfe")
+"texture": ExtResource("4_a5ip3")
 }],
 "loop": true,
 "name": &"attack_walk",
@@ -31,33 +34,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ftyfe")
+"texture": ExtResource("4_a5ip3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_t2smv")
+"texture": ExtResource("2_wqmim")
 }],
 "loop": true,
 "name": &"walk",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1r5x"]
-size = Vector2(26, 39)
-
-[node name="Area2D" type="Area2D"]
-script = ExtResource("2_t2smv")
-metadata/_edit_vertical_guides_ = [-47.0]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4.999997, -5.4999957)
-scale = Vector2(0.54, 0.67)
-sprite_frames = SubResource("SpriteFrames_ftyfe")
-animation = &"attack_walk"
-frame = 1
-frame_progress = 0.26326463
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_uhsqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, -8.5)
-shape = SubResource("RectangleShape2D_p1r5x")
+position = Vector2(8.5, -2.5)
+shape = SubResource("RectangleShape2D_pbrcj")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.0000002, -0.9999999)
+scale = Vector2(0.54, 0.67)
+sprite_frames = SubResource("SpriteFrames_66ips")
+animation = &"attack_walk"
