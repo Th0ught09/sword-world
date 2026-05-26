@@ -3,9 +3,12 @@ extends CharacterBody2D
 signal hit
 @export var speed: int = 100
 @export var gravity: int = 100
+@export var jump: int = 10
+var on_floor: bool = false
 
 func _ready():
 	pass
+
 
 func get_input():
 	velocity.x = 0
@@ -16,9 +19,10 @@ func get_input():
 		velocity.x -= speed
 		$AnimatedSprite2D.flip_h = true
 	if Input.is_action_pressed("move_down"):
-		velocity.y = -speed
-	if Input.is_action_pressed("move_up"):
-		velocity.y = speed
+		velocity.y = jump
+	if Input.is_action_pressed("move_up") and on_floor:
+		velocity.y = -jump
+		on_floor = false
 	return velocity
 
 func _physics_process(delta):
@@ -32,9 +36,11 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("attack")
 	else:
 		$AnimatedSprite2D.stop()
-	move_and_slide()
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
 		var collision_object = collision_info.get_collider()
 		if collision_object.is_in_group("enemy"):
 			collision_object.queue_free()
+		if collision_object.is_in_group("floor"):
+			on_floor = true
+	move_and_slide()
